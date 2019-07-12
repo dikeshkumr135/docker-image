@@ -1,0 +1,13 @@
+FROM python
+
+WORKDIR /app
+
+COPY . /app
+
+RUN pip install --trusted-host pypi.python.org -r requirements.txt
+
+EXPOSE 80
+
+ENV NAME World
+RUN chmod 644 app.py
+CMD ["python","app.py"]
